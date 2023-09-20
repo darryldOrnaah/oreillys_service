@@ -18,6 +18,11 @@ public class InvoiceController {
     @Autowired
     private InvoiceRepository invoiceRepository;
 
+    /**
+     *
+     * @param customerId
+     * @return all invoices based on customer id passed
+     */
     @GetMapping(path = "/all")
     public List<Invoice> getInvoices(@RequestParam(value = "customerId") Long customerId) {
         return invoiceRepository.findByCustomerId(customerId);
