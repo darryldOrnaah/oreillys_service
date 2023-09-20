@@ -18,6 +18,6 @@ public class InvoiceController {
 
     @GetMapping(path = "/all")
     public Map<Long, String> getInvoices(@RequestParam(value = "customerId")) {
-
+        return invoiceRepository.findAll();
     }
 }
